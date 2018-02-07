@@ -1,6 +1,7 @@
 {
   "name": "slidium",
   "version": "0.1.0",
+  "homepage": "https://gattigaga.github.io/slidium/",
   "private": true,
   "dependencies": {
     "normalize.css": "^7.0.0",
@@ -37,9 +38,6 @@
     "prettier": "^1.10.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --double-quote --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --double-quote --write", "git add"]
   }
 }
