@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TitleBox renders correctly 1`] = `
+<styled.input
+  onChange={[Function]}
+  onClick={[Function]}
+  type="text"
+  value="My Slides"
+/>
+`;
