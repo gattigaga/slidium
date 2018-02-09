@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuChild renders as clickable 1`] = `
+<styled.div
+  isClickable={true}
+  onClick={[Function]}
+>
+  <styled.div>
+    <Styled(Icon)
+      isClickable={true}
+      name="print"
+    />
+  </styled.div>
+  <styled.span
+    isClickable={true}
+  >
+    Open
+  </styled.span>
+</styled.div>
+`;
+
+exports[`MenuChild renders as non clickable 1`] = `
+<styled.div
+  isClickable={false}
+  onClick={[Function]}
+>
+  <styled.div>
+    <Styled(Icon)
+      isClickable={false}
+      name="print"
+    />
+  </styled.div>
+  <styled.span
+    isClickable={false}
+  >
+    Open
+  </styled.span>
+</styled.div>
+`;
