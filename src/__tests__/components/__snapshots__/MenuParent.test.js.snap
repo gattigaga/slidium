@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuParent renders in close mode 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <styled.span>
+    File
+  </styled.span>
+</styled.div>
+`;
+
+exports[`MenuParent renders in open mode with children 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <styled.span>
+    File
+  </styled.span>
+  <styled.span>
+    <styled.div>
+      <styled.span>
+        File
+      </styled.span>
+    </styled.div>
+    <MenuChild
+      isClickable={true}
+      label="New"
+      onClick={[Function]}
+    />
+    <MenuChild
+      isClickable={false}
+      label="Open"
+      onClick={[Function]}
+    />
+    <MenuChild
+      icon="print"
+      isClickable={true}
+      label="Print"
+      onClick={[Function]}
+    />
+  </styled.span>
+</styled.div>
+`;
+
+exports[`MenuParent renders in open mode without children 1`] = `
+<styled.div
+  onClick={[Function]}
+>
+  <styled.span>
+    File
+  </styled.span>
+  <styled.span>
+    <styled.div>
+      <styled.span>
+        File
+      </styled.span>
+    </styled.div>
+  </styled.span>
+</styled.div>
+`;
