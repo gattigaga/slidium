@@ -1,0 +1,118 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuBar open first menu, autoclose it, and then open second menu 1`] = `
+<styled.div>
+  <MenuParent
+    isOpen={true}
+    key=".0"
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".1"
+    label="Edit"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".2"
+    label="View"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`MenuBar open first menu, autoclose it, and then open second menu 2`] = `
+<styled.div>
+  <MenuParent
+    isOpen={false}
+    key=".0"
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={true}
+    key=".1"
+    label="Edit"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".2"
+    label="View"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`MenuBar renders empty child 1`] = `<styled.div />`;
+
+exports[`MenuBar renders with child 1`] = `
+<styled.div>
+  <MenuParent
+    isOpen={false}
+    key=".0"
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".1"
+    label="Edit"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".2"
+    label="View"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`MenuBar toggle first menu 1`] = `
+<styled.div>
+  <MenuParent
+    isOpen={true}
+    key=".0"
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".1"
+    label="Edit"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".2"
+    label="View"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`MenuBar toggle first menu 2`] = `
+<styled.div>
+  <MenuParent
+    isOpen={false}
+    key=".0"
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".1"
+    label="Edit"
+    onClick={[Function]}
+  />
+  <MenuParent
+    isOpen={false}
+    key=".2"
+    label="View"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
