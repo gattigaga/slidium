@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders correctly 1`] = `
+<i
+  className="material-icons "
+  onClick={[Function]}
+>
+  print
+</i>
+`;
+
+exports[`Icon renders with additional class 1`] = `
+<i
+  className="material-icons my-class"
+  onClick={[Function]}
+>
+  print
+</i>
+`;
