@@ -44,6 +44,7 @@ const Tray = styled.span`
   border: 1px solid #ccc;
   padding: 8px 0px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.2);
+  z-index: 2;
 `;
 
 const MenuParent = ({ label, children, isOpen, onClick }) => (
