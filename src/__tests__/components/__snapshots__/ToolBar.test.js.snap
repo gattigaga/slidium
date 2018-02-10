@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolBar renders not expanded 1`] = `
+<styled.div>
+  <styled.div />
+  <Toggle
+    name="expand_more"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`ToolBar renders with empty tool 1`] = `
+<styled.div>
+  <styled.div />
+  <Toggle
+    name="expand_less"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`ToolBar renders with some tools 1`] = `
+<styled.div>
+  <styled.div>
+    <Tool
+      icon="undo"
+    />
+    <Tool
+      icon="redo"
+    />
+    <Separator
+      orientation="vertical"
+    />
+  </styled.div>
+  <Toggle
+    name="expand_less"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
