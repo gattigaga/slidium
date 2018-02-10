@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tooltip renders correctly 1`] = `
+<styled.div>
+  <styled.div />
+  <styled.span>
+    New File
+  </styled.span>
+</styled.div>
+`;
+
+exports[`Tooltip renders with additional class 1`] = `
+<styled.div
+  className="my-class"
+>
+  <styled.div />
+  <styled.span>
+    New File
+  </styled.span>
+</styled.div>
+`;
