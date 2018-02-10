@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tool renders in active 1`] = `
+<styled.div
+  isActive={true}
+  onClick={[Function]}
+>
+  <Styled(Icon)
+    isActive={true}
+    name="print"
+  />
+</styled.div>
+`;
+
+exports[`Tool renders with tooltip 1`] = `
+<styled.div
+  isActive={false}
+  onClick={[Function]}
+>
+  <Styled(Tooltip)
+    text="Print"
+  />
+  <Styled(Icon)
+    isActive={false}
+    name="print"
+  />
+</styled.div>
+`;
+
+exports[`Tool renders without tooltip 1`] = `
+<styled.div
+  isActive={false}
+  onClick={[Function]}
+>
+  <Styled(Icon)
+    isActive={false}
+    name="print"
+  />
+</styled.div>
+`;
