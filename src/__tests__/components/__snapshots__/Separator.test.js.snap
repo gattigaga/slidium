@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Icon renders in horizontal 1`] = `
+<styled.div
+  orientation="horizontal"
+/>
+`;
+
+exports[`Icon renders in vertical 1`] = `
+<styled.div
+  orientation="vertical"
+/>
+`;
