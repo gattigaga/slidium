@@ -25,9 +25,11 @@ exports[`ToolBar renders with some tools 1`] = `
   <styled.div>
     <Tool
       icon="undo"
+      isActive={false}
     />
     <Tool
       icon="redo"
+      isActive={false}
     />
     <Separator
       orientation="vertical"
