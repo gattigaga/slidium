@@ -6,7 +6,7 @@ import Icon from "components/Icon";
 import Tooltip from "components/Tooltip";
 
 const StyledIcon = styled(Icon)`
-  color: ${({ isActive }) => (isActive ? "#222" : "#ccc")};
+  color: ${({ isActive }) => (isActive ? "#222" : "#888")};
   font-size: 20px;
   margin: auto;
 `;
