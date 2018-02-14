@@ -8,19 +8,37 @@ import Separator from "components/Separator";
 import MenuBar from "components/MenuBar";
 import MenuParent from "components/MenuParent";
 import MenuChild from "components/MenuChild";
+import SlideStrip from "components/SlideStrip";
+import Slide from "components/Slide";
+import MenuPopUp from "components/MenuPopUp";
 
-const Container = styled.header`
+const Container = styled.div`
+  display: flex;
   width: 100%;
   height: 100vh;
-  overflow: hidden;
+  flex-direction: column;
+  box-sizing: border-box;
   background: #ddd;
 `;
 
 const Header = styled.header`
   width: 100%;
+  box-sizing: border-box;
   background: white;
   padding: 4px 8px;
   border-bottom: 1px solid #ccc;
+`;
+
+const Workspace = styled.div`
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
+`;
+
+const SlideContainer = styled.div`
+  display: flex;
+  flex: 1;
+  box-sizing: border-box;
 `;
 
 class App extends Component {
@@ -29,7 +47,9 @@ class App extends Component {
 
     this.state = {
       title: "Untitled",
-      isExpanded: true
+      isExpanded: true,
+      slides: [1, 2, 3, 4, 5],
+      selectedSlide: 0
     };
 
     this.toggleExpand = this.toggleExpand.bind(this);
@@ -51,7 +71,7 @@ class App extends Component {
   }
 
   render() {
-    const { title, isExpanded } = this.state;
+    const { title, isExpanded, selectedSlide, slides } = this.state;
 
     return (
       <Container>
@@ -83,6 +103,16 @@ class App extends Component {
           <Tool icon="print" />
           <Separator orientation="vertical" />
         </ToolBar>
+        <Workspace>
+          <SlideStrip
+            slides={slides}
+            selected={selectedSlide}
+            onClickSlide={index => this.setState({ selectedSlide: index })}
+          />
+          <SlideContainer>
+            <Slide />
+          </SlideContainer>
+        </Workspace>
       </Container>
     );
   }
