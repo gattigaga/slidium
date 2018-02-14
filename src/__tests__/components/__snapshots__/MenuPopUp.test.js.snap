@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MenuPopUp renders empty menu 1`] = `
+<styled.div
+  position={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
+/>
+`;
+
+exports[`MenuPopUp renders in other position 1`] = `
+<styled.div
+  position={
+    Object {
+      "x": 320,
+      "y": 240,
+    }
+  }
+>
+  <MenuChild
+    isClickable={true}
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuChild
+    isClickable={false}
+    label="Open"
+    onClick={[Function]}
+  />
+  <MenuChild
+    icon="print"
+    isClickable={true}
+    label="Print"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
+
+exports[`MenuPopUp renders with children 1`] = `
+<styled.div
+  position={
+    Object {
+      "x": 0,
+      "y": 0,
+    }
+  }
+>
+  <MenuChild
+    isClickable={true}
+    label="New"
+    onClick={[Function]}
+  />
+  <MenuChild
+    isClickable={false}
+    label="Open"
+    onClick={[Function]}
+  />
+  <MenuChild
+    icon="print"
+    isClickable={true}
+    label="Print"
+    onClick={[Function]}
+  />
+</styled.div>
+`;
