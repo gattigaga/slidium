@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SlideStrip renders with 3 slides 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.span>
+      3
+       Slides
+    </styled.span>
+  </styled.div>
+  <styled.div>
+    <StyledThumbnail
+      indexCaption={1}
+      isActive={true}
+      key="0"
+      onClick={[Function]}
+    />
+    <StyledThumbnail
+      indexCaption={2}
+      isActive={false}
+      key="1"
+      onClick={[Function]}
+    />
+    <StyledThumbnail
+      indexCaption={3}
+      isActive={false}
+      key="2"
+      onClick={[Function]}
+    />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`SlideStrip renders with selected slide  1`] = `
+<styled.div>
+  <styled.div>
+    <styled.span>
+      3
+       Slides
+    </styled.span>
+  </styled.div>
+  <styled.div>
+    <StyledThumbnail
+      indexCaption={1}
+      isActive={false}
+      key="0"
+      onClick={[Function]}
+    />
+    <StyledThumbnail
+      indexCaption={2}
+      isActive={true}
+      key="1"
+      onClick={[Function]}
+    />
+    <StyledThumbnail
+      indexCaption={3}
+      isActive={false}
+      key="2"
+      onClick={[Function]}
+    />
+  </styled.div>
+</styled.div>
+`;
+
+exports[`SlideStrip renders without slide 1`] = `
+<styled.div>
+  <styled.div>
+    <styled.span>
+      0
+       Slides
+    </styled.span>
+  </styled.div>
+  <styled.div />
+</styled.div>
+`;
