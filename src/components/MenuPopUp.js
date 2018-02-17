@@ -14,8 +14,10 @@ const Container = styled.div`
   z-index: 2;
 `;
 
-const MenuPopUp = ({ children, position }) => (
-  <Container position={position}>{children}</Container>
+const MenuPopUp = ({ children, position, onClick }) => (
+  <Container position={position} onClick={onClick}>
+    {children}
+  </Container>
 );
 
 MenuPopUp.propTypes = {
@@ -23,7 +25,8 @@ MenuPopUp.propTypes = {
   position: PropTypes.shape({
     x: PropTypes.string,
     y: PropTypes.string
-  })
+  }),
+  onClick: PropTypes.func
 };
 
 MenuPopUp.defaultProps = {

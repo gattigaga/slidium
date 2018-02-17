@@ -2,6 +2,7 @@
 
 exports[`MenuPopUp renders correctly 1`] = `
 <styled.div
+  onClick={[Function]}
   position={
     Object {
       "x": "0px",
