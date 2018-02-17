@@ -8,23 +8,17 @@ import MenuChild from "components/MenuChild";
 let wrapper;
 
 beforeEach(() => {
-  wrapper = shallow(<MenuPopUp />);
+  wrapper = shallow(
+    <MenuPopUp>
+      <MenuChild label="New" />
+      <MenuChild label="Open" isClickable={false} />
+      <MenuChild label="Print" icon="print" />
+    </MenuPopUp>
+  );
 });
 
 describe("MenuPopUp", () => {
-  it("renders empty menu", () => {
-    expect(toJSON(wrapper)).toMatchSnapshot();
-  });
-
-  it("renders with children", () => {
-    wrapper = shallow(
-      <MenuPopUp>
-        <MenuChild label="New" />
-        <MenuChild label="Open" isClickable={false} />
-        <MenuChild label="Print" icon="print" />
-      </MenuPopUp>
-    );
-
+  it("renders correctly", () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
@@ -37,7 +31,7 @@ describe("MenuPopUp", () => {
       </MenuPopUp>
     );
 
-    wrapper.setProps({ position: { x: 320, y: 240 } });
+    wrapper.setProps({ position: { x: "320px", y: "240px" } });
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 });

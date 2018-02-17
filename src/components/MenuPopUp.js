@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
   position: absolute;
-  min-width: 192px;
+  min-width: 64px;
   top: ${({ position }) => position.y};
   left: ${({ position }) => position.x};
   background: white;
@@ -19,17 +19,17 @@ const MenuPopUp = ({ children, position }) => (
 );
 
 MenuPopUp.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   position: PropTypes.shape({
-    x: PropTypes.number,
-    y: PropTypes.number
+    x: PropTypes.string,
+    y: PropTypes.string
   })
 };
 
 MenuPopUp.defaultProps = {
   position: {
-    x: 0,
-    y: 0
+    x: "0px",
+    y: "0px"
   }
 };
 
