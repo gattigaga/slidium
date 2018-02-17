@@ -8,7 +8,9 @@
     "prop-types": "^15.6.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
     "react-scripts": "1.1.0",
+    "redux": "^3.7.2",
     "styled-components": "^3.1.6",
     "typeface-roboto": "^0.0.54"
   },
@@ -38,6 +40,9 @@
     "prettier": "^1.10.2"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --double-quote --write", "git add"]
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --double-quote --write",
+      "git add"
+    ]
   }
 }
