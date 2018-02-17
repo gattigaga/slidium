@@ -1,0 +1,256 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToolTextBox renders with tooltip 1`] = `
+<styled.div
+  isOpen={false}
+>
+  <Styled(Tooltip)
+    text="Font Size"
+  />
+  <TextBox
+    innerRef={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    type="text"
+    value="32"
+  />
+  <Dropdown
+    isOpen={false}
+    onClick={[Function]}
+  >
+    <Styled(Icon)
+      name="arrow_drop_down"
+    />
+  </Dropdown>
+</styled.div>
+`;
+
+exports[`ToolTextBox renders without tooltip 1`] = `
+<styled.div
+  isOpen={false}
+>
+  <TextBox
+    innerRef={[Function]}
+    onChange={[Function]}
+    onClick={[Function]}
+    type="text"
+    value="32"
+  />
+  <Dropdown
+    isOpen={false}
+    onClick={[Function]}
+  >
+    <Styled(Icon)
+      name="arrow_drop_down"
+    />
+  </Dropdown>
+</styled.div>
+`;
+
+exports[`ToolTextBox toggles dropdown 1`] = `
+<ToolTextBox
+  onChange={[Function]}
+  text="32"
+>
+  <styled.div
+    isOpen={true}
+  >
+    <div
+      className="sc-gzVnrw esMmzi"
+    >
+      <TextBox
+        innerRef={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="text"
+        value="32"
+      >
+        <input
+          className="sc-EHOje dOXpNc"
+          onChange={[Function]}
+          onClick={[Function]}
+          type="text"
+          value="32"
+        />
+      </TextBox>
+      <Dropdown
+        isOpen={true}
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bZQynM dlfBam"
+          onClick={[Function]}
+        >
+          <Styled(Icon)
+            name="arrow_drop_down"
+          >
+            <Icon
+              className="sc-ifAKCX cVMWkQ"
+              name="arrow_drop_down"
+            >
+              <i
+                className="material-icons sc-ifAKCX cVMWkQ"
+              >
+                arrow_drop_down
+              </i>
+            </Icon>
+          </Styled(Icon)>
+        </div>
+      </Dropdown>
+      <MenuPopUp
+        position={
+          Object {
+            "y": "100%",
+          }
+        }
+      >
+        <styled.div
+          position={
+            Object {
+              "y": "100%",
+            }
+          }
+        >
+          <div
+            className="sc-htoDjs cFrZYG"
+          >
+            <MenuChild
+              isClickable={true}
+              isWithoutIcon={true}
+              label="24"
+              onClick={[Function]}
+            >
+              <styled.div
+                isClickable={true}
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-dnqmqq jfRWuj"
+                  onClick={[Function]}
+                >
+                  <styled.span
+                    isClickable={true}
+                  >
+                    <span
+                      className="sc-gqjmRU jZwWJw"
+                    >
+                      24
+                    </span>
+                  </styled.span>
+                </div>
+              </styled.div>
+            </MenuChild>
+            <MenuChild
+              isClickable={true}
+              isWithoutIcon={true}
+              label="32"
+              onClick={[Function]}
+            >
+              <styled.div
+                isClickable={true}
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-dnqmqq jfRWuj"
+                  onClick={[Function]}
+                >
+                  <styled.span
+                    isClickable={true}
+                  >
+                    <span
+                      className="sc-gqjmRU jZwWJw"
+                    >
+                      32
+                    </span>
+                  </styled.span>
+                </div>
+              </styled.div>
+            </MenuChild>
+            <MenuChild
+              isClickable={true}
+              isWithoutIcon={true}
+              label="48"
+              onClick={[Function]}
+            >
+              <styled.div
+                isClickable={true}
+                onClick={[Function]}
+              >
+                <div
+                  className="sc-dnqmqq jfRWuj"
+                  onClick={[Function]}
+                >
+                  <styled.span
+                    isClickable={true}
+                  >
+                    <span
+                      className="sc-gqjmRU jZwWJw"
+                    >
+                      48
+                    </span>
+                  </styled.span>
+                </div>
+              </styled.div>
+            </MenuChild>
+          </div>
+        </styled.div>
+      </MenuPopUp>
+    </div>
+  </styled.div>
+</ToolTextBox>
+`;
+
+exports[`ToolTextBox toggles dropdown 2`] = `
+<ToolTextBox
+  onChange={[Function]}
+  text="32"
+>
+  <styled.div
+    isOpen={false}
+  >
+    <div
+      className="sc-gzVnrw kMVusV"
+    >
+      <TextBox
+        innerRef={[Function]}
+        onChange={[Function]}
+        onClick={[Function]}
+        type="text"
+        value="32"
+      >
+        <input
+          className="sc-EHOje dOXpNc"
+          onChange={[Function]}
+          onClick={[Function]}
+          type="text"
+          value="32"
+        />
+      </TextBox>
+      <Dropdown
+        isOpen={false}
+        onClick={[Function]}
+      >
+        <div
+          className="sc-bZQynM bjHajs"
+          onClick={[Function]}
+        >
+          <Styled(Icon)
+            name="arrow_drop_down"
+          >
+            <Icon
+              className="sc-ifAKCX cVMWkQ"
+              name="arrow_drop_down"
+            >
+              <i
+                className="material-icons sc-ifAKCX cVMWkQ"
+              >
+                arrow_drop_down
+              </i>
+            </Icon>
+          </Styled(Icon)>
+        </div>
+      </Dropdown>
+    </div>
+  </styled.div>
+</ToolTextBox>
+`;
