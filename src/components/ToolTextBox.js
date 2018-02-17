@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import Tooltip from "components/Tooltip";
 import Icon from "components/Icon";
+import MenuPopUp from "components/MenuPopUp";
 
 const StyledTooltip = styled(Tooltip)``;
 
@@ -126,7 +127,11 @@ class ToolTextBox extends Component {
         <Dropdown onClick={this.toggleDropdown} isOpen={isOpen}>
           <StyledIcon name="arrow_drop_down" />
         </Dropdown>
-        {isOpen && children}
+        {isOpen && (
+          <MenuPopUp position={{ y: "100%" }} onClick={this.toggleDropdown}>
+            {children}
+          </MenuPopUp>
+        )}
       </Container>
     );
   }

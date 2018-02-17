@@ -12,11 +12,9 @@ beforeEach(() => {
   onChange = jest.fn();
   wrapper = shallow(
     <ToolTextBox text="32" onChange={onChange}>
-      <MenuPopUp position={{ y: "100%" }}>
-        <MenuChild label="24" isWithoutIcon />
-        <MenuChild label="32" isWithoutIcon />
-        <MenuChild label="48" isWithoutIcon />
-      </MenuPopUp>
+      <MenuChild label="24" isWithoutIcon />
+      <MenuChild label="32" isWithoutIcon />
+      <MenuChild label="48" isWithoutIcon />
     </ToolTextBox>
   );
 });

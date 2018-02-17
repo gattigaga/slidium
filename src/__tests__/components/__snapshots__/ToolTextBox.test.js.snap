@@ -56,7 +56,7 @@ exports[`ToolTextBox toggles dropdown 1`] = `
     isOpen={true}
   >
     <div
-      className="sc-gzVnrw esMmzi"
+      className="sc-htoDjs hePOTp"
     >
       <TextBox
         innerRef={[Function]}
@@ -66,7 +66,7 @@ exports[`ToolTextBox toggles dropdown 1`] = `
         value="32"
       >
         <input
-          className="sc-EHOje dOXpNc"
+          className="sc-bZQynM kNUhUB"
           onChange={[Function]}
           onClick={[Function]}
           type="text"
@@ -78,18 +78,18 @@ exports[`ToolTextBox toggles dropdown 1`] = `
         onClick={[Function]}
       >
         <div
-          className="sc-bZQynM dlfBam"
+          className="sc-gzVnrw chtFnt"
           onClick={[Function]}
         >
           <Styled(Icon)
             name="arrow_drop_down"
           >
             <Icon
-              className="sc-ifAKCX cVMWkQ"
+              className="sc-EHOje WkYfS"
               name="arrow_drop_down"
             >
               <i
-                className="material-icons sc-ifAKCX cVMWkQ"
+                className="material-icons sc-EHOje WkYfS"
               >
                 arrow_drop_down
               </i>
@@ -98,6 +98,7 @@ exports[`ToolTextBox toggles dropdown 1`] = `
         </div>
       </Dropdown>
       <MenuPopUp
+        onClick={[Function]}
         position={
           Object {
             "y": "100%",
@@ -105,6 +106,7 @@ exports[`ToolTextBox toggles dropdown 1`] = `
         }
       >
         <styled.div
+          onClick={[Function]}
           position={
             Object {
               "y": "100%",
@@ -112,86 +114,107 @@ exports[`ToolTextBox toggles dropdown 1`] = `
           }
         >
           <div
-            className="sc-htoDjs cFrZYG"
+            className="sc-bxivhb jILBZV"
+            onClick={[Function]}
           >
-            <MenuChild
-              isClickable={true}
-              isWithoutIcon={true}
-              label="24"
-              onClick={[Function]}
+            <MenuPopUp
+              position={
+                Object {
+                  "y": "100%",
+                }
+              }
             >
               <styled.div
-                isClickable={true}
-                onClick={[Function]}
+                position={
+                  Object {
+                    "y": "100%",
+                  }
+                }
               >
                 <div
-                  className="sc-dnqmqq jfRWuj"
-                  onClick={[Function]}
+                  className="sc-bxivhb jILBZV"
                 >
-                  <styled.span
+                  <MenuChild
                     isClickable={true}
+                    isWithoutIcon={true}
+                    label="24"
+                    onClick={[Function]}
                   >
-                    <span
-                      className="sc-gqjmRU jZwWJw"
+                    <styled.div
+                      isClickable={true}
+                      onClick={[Function]}
                     >
-                      24
-                    </span>
-                  </styled.span>
+                      <div
+                        className="sc-dnqmqq jfRWuj"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          isClickable={true}
+                        >
+                          <span
+                            className="sc-gqjmRU jZwWJw"
+                          >
+                            24
+                          </span>
+                        </styled.span>
+                      </div>
+                    </styled.div>
+                  </MenuChild>
+                  <MenuChild
+                    isClickable={true}
+                    isWithoutIcon={true}
+                    label="32"
+                    onClick={[Function]}
+                  >
+                    <styled.div
+                      isClickable={true}
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="sc-dnqmqq jfRWuj"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          isClickable={true}
+                        >
+                          <span
+                            className="sc-gqjmRU jZwWJw"
+                          >
+                            32
+                          </span>
+                        </styled.span>
+                      </div>
+                    </styled.div>
+                  </MenuChild>
+                  <MenuChild
+                    isClickable={true}
+                    isWithoutIcon={true}
+                    label="48"
+                    onClick={[Function]}
+                  >
+                    <styled.div
+                      isClickable={true}
+                      onClick={[Function]}
+                    >
+                      <div
+                        className="sc-dnqmqq jfRWuj"
+                        onClick={[Function]}
+                      >
+                        <styled.span
+                          isClickable={true}
+                        >
+                          <span
+                            className="sc-gqjmRU jZwWJw"
+                          >
+                            48
+                          </span>
+                        </styled.span>
+                      </div>
+                    </styled.div>
+                  </MenuChild>
                 </div>
               </styled.div>
-            </MenuChild>
-            <MenuChild
-              isClickable={true}
-              isWithoutIcon={true}
-              label="32"
-              onClick={[Function]}
-            >
-              <styled.div
-                isClickable={true}
-                onClick={[Function]}
-              >
-                <div
-                  className="sc-dnqmqq jfRWuj"
-                  onClick={[Function]}
-                >
-                  <styled.span
-                    isClickable={true}
-                  >
-                    <span
-                      className="sc-gqjmRU jZwWJw"
-                    >
-                      32
-                    </span>
-                  </styled.span>
-                </div>
-              </styled.div>
-            </MenuChild>
-            <MenuChild
-              isClickable={true}
-              isWithoutIcon={true}
-              label="48"
-              onClick={[Function]}
-            >
-              <styled.div
-                isClickable={true}
-                onClick={[Function]}
-              >
-                <div
-                  className="sc-dnqmqq jfRWuj"
-                  onClick={[Function]}
-                >
-                  <styled.span
-                    isClickable={true}
-                  >
-                    <span
-                      className="sc-gqjmRU jZwWJw"
-                    >
-                      48
-                    </span>
-                  </styled.span>
-                </div>
-              </styled.div>
-            </MenuChild>
+            </MenuPopUp>
           </div>
         </styled.div>
       </MenuPopUp>
@@ -209,7 +232,7 @@ exports[`ToolTextBox toggles dropdown 2`] = `
     isOpen={false}
   >
     <div
-      className="sc-gzVnrw kMVusV"
+      className="sc-htoDjs ivyEDr"
     >
       <TextBox
         innerRef={[Function]}
@@ -219,7 +242,7 @@ exports[`ToolTextBox toggles dropdown 2`] = `
         value="32"
       >
         <input
-          className="sc-EHOje dOXpNc"
+          className="sc-bZQynM kNUhUB"
           onChange={[Function]}
           onClick={[Function]}
           type="text"
@@ -231,18 +254,18 @@ exports[`ToolTextBox toggles dropdown 2`] = `
         onClick={[Function]}
       >
         <div
-          className="sc-bZQynM bjHajs"
+          className="sc-gzVnrw Bocoz"
           onClick={[Function]}
         >
           <Styled(Icon)
             name="arrow_drop_down"
           >
             <Icon
-              className="sc-ifAKCX cVMWkQ"
+              className="sc-EHOje WkYfS"
               name="arrow_drop_down"
             >
               <i
-                className="material-icons sc-ifAKCX cVMWkQ"
+                className="material-icons sc-EHOje WkYfS"
               >
                 arrow_drop_down
               </i>
