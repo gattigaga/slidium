@@ -4,21 +4,24 @@ exports[`SlideThumbnail renders correctly 1`] = `
 <styled.div
   onClick={[Function]}
 >
+  <styled.span>
+    1
+  </styled.span>
   <styled.svg />
 </styled.div>
 `;
 
-exports[`SlideThumbnail renders in active and show index caption 1`] = `
+exports[`SlideThumbnail renders in active 1`] = `
 <styled.div
   isActive={true}
   onClick={[Function]}
 >
-  <styled.div>
-    <styled.span>
-      1
-    </styled.span>
-  </styled.div>
-  <styled.svg />
+  <styled.span>
+    1
+  </styled.span>
+  <styled.svg
+    isActive={true}
+  />
 </styled.div>
 `;
 
@@ -27,6 +30,9 @@ exports[`SlideThumbnail renders with additional class 1`] = `
   className="my-class"
   onClick={[Function]}
 >
+  <styled.span>
+    1
+  </styled.span>
   <styled.svg />
 </styled.div>
 `;

@@ -52,7 +52,7 @@ describe("SlideStrip", () => {
     expect(onClickSlide.mock.calls.length).toEqual(0);
 
     wrapper
-      .find("StyledThumbnail")
+      .find("SlideThumbnail")
       .at(selectedIndex)
       .simulate("click");
 

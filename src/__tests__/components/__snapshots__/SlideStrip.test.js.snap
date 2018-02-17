@@ -9,19 +9,19 @@ exports[`SlideStrip renders with 3 slides 1`] = `
     </styled.span>
   </styled.div>
   <styled.div>
-    <StyledThumbnail
+    <SlideThumbnail
       indexCaption={1}
       isActive={true}
       key="0"
       onClick={[Function]}
     />
-    <StyledThumbnail
+    <SlideThumbnail
       indexCaption={2}
       isActive={false}
       key="1"
       onClick={[Function]}
     />
-    <StyledThumbnail
+    <SlideThumbnail
       indexCaption={3}
       isActive={false}
       key="2"
@@ -40,19 +40,19 @@ exports[`SlideStrip renders with selected slide  1`] = `
     </styled.span>
   </styled.div>
   <styled.div>
-    <StyledThumbnail
+    <SlideThumbnail
       indexCaption={1}
       isActive={false}
       key="0"
       onClick={[Function]}
     />
-    <StyledThumbnail
+    <SlideThumbnail
       indexCaption={2}
       isActive={true}
       key="1"
       onClick={[Function]}
     />
-    <StyledThumbnail
+    <SlideThumbnail
       indexCaption={3}
       isActive={false}
       key="2"

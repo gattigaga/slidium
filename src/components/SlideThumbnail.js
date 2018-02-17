@@ -3,46 +3,36 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 
 const Container = styled.div`
-  width: 160px;
-  background: white;
+  padding: 8px 30px;
   cursor: pointer;
   position: relative;
-  border: ${({ isActive }) =>
-    isActive ? "4px solid #1a85ff" : "1px solid #ccc"};
+  background: ${({ isActive }) => (isActive ? "#ccc" : "#ddd")};
 `;
 
 const Content = styled.svg`
   width: 160px;
   height: 120px;
+  background: white;
   box-sizing: border-box;
-`;
-
-const IndexContainer = styled.div`
-  min-width: 24px;
-  padding: 4px;
-  background: #1a85ff;
-  position: absolute;
-  top: 0px;
-  left: -4px;
-  display: flex;
+  border: ${({ isActive }) =>
+    isActive ? "2px solid #1a85ff" : "1px solid #ccc"};
 `;
 
 const Index = styled.span`
-  color: white;
+  color: black;
   font-family: Roboto;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: bold;
-  margin: auto;
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  user-select: none;
 `;
 
 const SlideThumbnail = ({ onClick, isActive, className, indexCaption }) => (
   <Container onClick={onClick} isActive={isActive} className={className}>
-    {isActive && (
-      <IndexContainer>
-        <Index>{indexCaption}</Index>
-      </IndexContainer>
-    )}
-    <Content />
+    <Index>{indexCaption}</Index>
+    <Content isActive={isActive} />
   </Container>
 );
 

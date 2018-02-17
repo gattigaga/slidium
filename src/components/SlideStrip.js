@@ -4,10 +4,6 @@ import styled from "styled-components";
 
 import SlideThumbnail from "components/SlideThumbnail";
 
-const StyledThumbnail = styled(SlideThumbnail)`
-  margin: 12px 0px;
-`;
-
 const Container = styled.div`
   width: auto;
   height: 100%;
@@ -42,19 +38,8 @@ const SlideContainer = styled.div`
   width: auto;
   height: 100%;
   box-sizing: border-box;
-  padding: 24px;
   overflow-y: scroll;
-
-  & ${StyledThumbnail}:first-child {
-    margin-top: 0px;
-  }
-
-  & ${StyledThumbnail}:last-child {
-    margin-bottom: 0px;
-  }
 `;
-
-StyledThumbnail.displayName = "StyledThumbnail";
 
 const SlideStrip = ({ slides, onClickSlide, selected }) => (
   <Container>
@@ -63,7 +48,7 @@ const SlideStrip = ({ slides, onClickSlide, selected }) => (
     </Header>
     <SlideContainer>
       {slides.map((slide, index) => (
-        <StyledThumbnail
+        <SlideThumbnail
           key={index}
           indexCaption={index + 1}
           onClick={() => onClickSlide(index)}

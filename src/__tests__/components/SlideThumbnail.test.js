@@ -8,7 +8,7 @@ let wrapper, onClick;
 
 beforeEach(() => {
   onClick = jest.fn();
-  wrapper = shallow(<SlideThumbnail onClick={onClick} />);
+  wrapper = shallow(<SlideThumbnail indexCaption={1} onClick={onClick} />);
 });
 
 describe("SlideThumbnail", () => {
@@ -16,9 +16,8 @@ describe("SlideThumbnail", () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
-  it("renders in active and show index caption", () => {
+  it("renders in active", () => {
     wrapper.setProps({
-      indexCaption: 1,
       isActive: true
     });
 
