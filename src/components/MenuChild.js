@@ -40,11 +40,13 @@ const Label = styled.span`
   color: ${({ isClickable }) => (isClickable ? "black" : "#bbb")};
 `;
 
-const MenuChild = ({ label, icon, isClickable, onClick }) => (
+const MenuChild = ({ label, icon, isClickable, isWithoutIcon, onClick }) => (
   <Container isClickable={isClickable} onClick={() => isClickable && onClick()}>
-    <IconContainer>
-      {icon && <StyledIcon name={icon} isClickable={isClickable} />}
-    </IconContainer>
+    {!isWithoutIcon && (
+      <IconContainer>
+        {icon && <StyledIcon name={icon} isClickable={isClickable} />}
+      </IconContainer>
+    )}
     <Label isClickable={isClickable}>{label}</Label>
   </Container>
 );
@@ -53,6 +55,7 @@ MenuChild.propTypes = {
   icon: PropTypes.string,
   label: PropTypes.string,
   isClickable: PropTypes.bool,
+  isWithoutIcon: PropTypes.bool,
   onClick: PropTypes.func
 };
 

@@ -8,16 +8,32 @@ let wrapper, onClick;
 
 beforeEach(() => {
   onClick = jest.fn();
-  wrapper = shallow(<MenuChild label="Open" icon="print" onClick={onClick} />);
+  wrapper = shallow(<MenuChild label="Open" onClick={onClick} />);
 });
 
 describe("MenuChild", () => {
-  it("renders as clickable", () => {
+  it("renders correctly", () => {
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
   it("renders as non clickable", () => {
     wrapper.setProps({ isClickable: false });
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+
+  it("renders with icon", () => {
+    wrapper.setProps({
+      icon: "print"
+    });
+
+    expect(toJSON(wrapper)).toMatchSnapshot();
+  });
+
+  it("renders without icon", () => {
+    wrapper.setProps({
+      isWithoutIcon: true
+    });
+
     expect(toJSON(wrapper)).toMatchSnapshot();
   });
 
