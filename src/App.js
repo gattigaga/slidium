@@ -3,14 +3,15 @@ import styled from "styled-components";
 
 import TitleBox from "components/TitleBox";
 import ToolBar from "components/ToolBar";
+import ToolTextBox from "components/ToolTextBox";
 import Tool from "components/Tool";
 import Separator from "components/Separator";
 import MenuBar from "components/MenuBar";
 import MenuParent from "components/MenuParent";
 import MenuChild from "components/MenuChild";
+import MenuPopUp from "components/MenuPopUp";
 import SlideStrip from "components/SlideStrip";
 import Slide from "components/Slide";
-import MenuPopUp from "components/MenuPopUp";
 
 const Container = styled.div`
   display: flex;
@@ -72,6 +73,7 @@ class App extends Component {
 
   render() {
     const { title, isExpanded, selectedSlide, slides } = this.state;
+    const fontSizes = [12, 14, 16, 18, 20, 22, 24, 30, 36, 48, 60, 72, 96];
 
     return (
       <Container>
@@ -83,25 +85,61 @@ class App extends Component {
             />
             <MenuBar>
               <MenuParent label="File">
-                <MenuChild icon="print" label="New Presentation" />
+                <MenuChild label="New" />
                 <MenuChild label="Open" />
-                <MenuChild label="Rename" isClickable={false} />
+                <MenuChild label="Rename" />
               </MenuParent>
               <MenuParent label="Edit">
-                <MenuChild icon="print" label="New Presentation" />
-                <MenuChild label="Open" />
+                <MenuChild label="Undo" icon="undo" />
+                <MenuChild label="Redo" icon="redo" />
                 <Separator />
-                <MenuChild label="Rename" isClickable={false} />
+                <MenuChild label="Copy" />
+                <MenuChild label="Cut" />
+                <MenuChild label="Paste" />
               </MenuParent>
-              <MenuParent label="View" />
-              <MenuParent label="Slide" />
-              <MenuParent label="Help" />
+              <MenuParent label="View">
+                <MenuChild label="Play" />
+                <Separator />
+                <MenuChild label="Toggle Fullscreen" />
+                <MenuChild label="Toggle Header" />
+              </MenuParent>
+              <MenuParent label="Slide">
+                <MenuChild label="Add New" />
+                <Separator />
+                <MenuChild label="Move Up" />
+                <MenuChild label="Move Down" />
+                <MenuChild label="Move to Beginning" />
+                <MenuChild label="Move to End" />
+              </MenuParent>
+              <MenuParent label="Help">
+                <MenuChild label="About" />
+              </MenuParent>
             </MenuBar>
           </Header>
         )}
         <ToolBar isExpanded={isExpanded} onClickToggle={this.toggleExpand}>
-          <Tool icon="print" />
+          <Tool icon="add_box" tooltip="New Slide" />
+          <Tool icon="undo" tooltip="Undo" />
+          <Tool icon="redo" tooltip="Redo" />
           <Separator orientation="vertical" />
+          <Tool icon="call_made" tooltip="Select" />
+          <Tool icon="text_fields" tooltip="Text Box" />
+          <Tool icon="image" tooltip="Image" />
+          <Separator orientation="vertical" />
+          <ToolTextBox text="52" tooltip="Font Size">
+            {fontSizes.map((size, index) => (
+              <MenuChild key={index} label={size} isWithoutIcon />
+            ))}
+          </ToolTextBox>
+          <Separator orientation="vertical" />
+          <Tool icon="format_bold" tooltip="Bold" />
+          <Tool icon="format_italic" tooltip="Italic" />
+          <Tool icon="format_underline" tooltip="Underline" />
+          <Separator orientation="vertical" />
+          <Tool icon="format_align_left" tooltip="Align Left" />
+          <Tool icon="format_align_center" tooltip="Align Center" />
+          <Tool icon="format_align_right" tooltip="Align Right" />
+          <Tool icon="format_align_justify" tooltip="Justify" />
         </ToolBar>
         <Workspace>
           <SlideStrip
