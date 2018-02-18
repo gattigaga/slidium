@@ -126,7 +126,7 @@ export function slides(state = [1], action) {
 }
 
 // Check if header is expand or not
-export function isHeaderExpand(state = false, action) {
+export function isHeaderExpand(state = true, action) {
   const { type, payload } = action;
 
   switch (type) {
