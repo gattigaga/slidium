@@ -2,7 +2,8 @@ import {
   SET_PRESENTATION_TITLE,
   CREATE_SLIDE,
   REMOVE_SLIDE,
-  MOVE_SLIDE
+  MOVE_SLIDE,
+  SET_HEADER_EXPAND
 } from "store/actionTypes";
 
 /**
@@ -67,6 +68,22 @@ export function moveSlide(selectedIndex, position) {
     payload: {
       selectedIndex,
       position
+    }
+  };
+}
+
+/**
+ * Set header to expand or not
+ *
+ * @export
+ * @param {boolean} isExpand - Toggle to expand header
+ * @returns {object}
+ */
+export function setHeaderExpand(isExpand) {
+  return {
+    type: SET_HEADER_EXPAND,
+    payload: {
+      isExpand
     }
   };
 }

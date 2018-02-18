@@ -2,9 +2,10 @@ import {
   setPresentationTitle,
   createSlide,
   removeSlide,
-  moveSlide
+  moveSlide,
+  setHeaderExpand
 } from "store/actions";
-import { title, slides } from "store/reducers";
+import { title, slides, isHeaderExpand } from "store/reducers";
 
 describe("title", () => {
   it("should return initial state", () => {
@@ -96,5 +97,20 @@ describe("slides", () => {
     const action = moveSlide(1, "last");
 
     expect(slides(initial, action)).toEqual(expected);
+  });
+});
+
+describe("isHeaderExpand", () => {
+  it("should return initial state", () => {
+    const expected = false;
+    expect(isHeaderExpand(expected, {})).toEqual(expected);
+  });
+
+  it("should return in expand mode", () => {
+    const initial = false;
+    const expected = true;
+    const action = setHeaderExpand(true);
+
+    expect(isHeaderExpand(initial, action)).toEqual(expected);
   });
 });

@@ -2,13 +2,15 @@ import {
   SET_PRESENTATION_TITLE,
   CREATE_SLIDE,
   REMOVE_SLIDE,
-  MOVE_SLIDE
+  MOVE_SLIDE,
+  SET_HEADER_EXPAND
 } from "store/actionTypes";
 import {
   setPresentationTitle,
   createSlide,
   removeSlide,
-  moveSlide
+  moveSlide,
+  setHeaderExpand
 } from "store/actions";
 
 test("should create an action to set presentation title", () => {
@@ -59,4 +61,16 @@ test("should create an action to move current slide", () => {
   };
 
   expect(moveSlide(selectedIndex, position)).toEqual(expected);
+});
+
+test("should create an action to toggle header expand", () => {
+  const isExpand = false;
+  const expected = {
+    type: SET_HEADER_EXPAND,
+    payload: {
+      isExpand
+    }
+  };
+
+  expect(setHeaderExpand(isExpand)).toEqual(expected);
 });

@@ -3,7 +3,8 @@ import {
   SET_PRESENTATION_TITLE,
   CREATE_SLIDE,
   REMOVE_SLIDE,
-  MOVE_SLIDE
+  MOVE_SLIDE,
+  SET_HEADER_EXPAND
 } from "store/actionTypes";
 
 // Title of current presentation
@@ -124,9 +125,23 @@ export function slides(state = [1], action) {
   }
 }
 
+// Check if header is expand or not
+export function isHeaderExpand(state = false, action) {
+  const { type, payload } = action;
+
+  switch (type) {
+    case SET_HEADER_EXPAND:
+      return payload.isExpand;
+
+    default:
+      return state;
+  }
+}
+
 const reducers = combineReducers({
   title,
-  slides
+  slides,
+  isHeaderExpand
 });
 
 export default reducers;
