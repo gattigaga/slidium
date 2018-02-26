@@ -1,5 +1,7 @@
 import React, { Component } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
 import TitleBox from "components/TitleBox";
 import ToolBar from "components/ToolBar";
@@ -9,9 +11,17 @@ import Separator from "components/Separator";
 import MenuBar from "components/MenuBar";
 import MenuParent from "components/MenuParent";
 import MenuChild from "components/MenuChild";
-import MenuPopUp from "components/MenuPopUp";
 import SlideStrip from "components/SlideStrip";
 import Slide from "components/Slide";
+
+import {
+  setPresentationTitle,
+  setHeaderExpand,
+  createSlide,
+  removeSlide,
+  selectSlide,
+  moveSlide
+} from "store/actions";
 
 const Container = styled.div`
   display: flex;
@@ -43,46 +53,23 @@ const SlideContainer = styled.div`
 `;
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      title: "Untitled",
-      isExpanded: true,
-      slides: [1, 2, 3, 4, 5],
-      selectedSlide: 0
-    };
-
-    this.toggleExpand = this.toggleExpand.bind(this);
-  }
-
-  /**
-   * Expand or shrink header
-   *
-   * @memberof App
-   */
-  toggleExpand() {
-    this.setState(prevState => {
-      const { isExpanded } = prevState;
-
-      return {
-        isExpanded: !isExpanded
-      };
-    });
-  }
-
   render() {
-    const { title, isExpanded, selectedSlide, slides } = this.state;
+    const {
+      title,
+      isHeaderExpand,
+      expandHeader,
+      newSlide,
+      deleteSlide,
+      setTitle,
+      moveSlideTo
+    } = this.props;
     const fontSizes = [12, 14, 16, 18, 20, 22, 24, 30, 36, 48, 60, 72, 96];
 
     return (
       <Container>
-        {isExpanded && (
+        {isHeaderExpand && (
           <Header>
-            <TitleBox
-              value={title}
-              onChange={e => this.setState({ title: e.target.value })}
-            />
+            <TitleBox value={title} onChange={e => setTitle(e.target.value)} />
             <MenuBar>
               <MenuParent label="File">
                 <MenuChild label="New" />
@@ -101,15 +88,28 @@ class App extends Component {
                 <MenuChild label="Play" />
                 <Separator />
                 <MenuChild label="Toggle Fullscreen" />
-                <MenuChild label="Toggle Header" />
+                <MenuChild
+                  label="Toggle Header"
+                  onClick={() => expandHeader(!isHeaderExpand)}
+                />
               </MenuParent>
               <MenuParent label="Slide">
-                <MenuChild label="Add New" />
+                <MenuChild label="Add New" onClick={newSlide} />
+                <MenuChild label="Remove" onClick={deleteSlide} />
                 <Separator />
-                <MenuChild label="Move Up" />
-                <MenuChild label="Move Down" />
-                <MenuChild label="Move to Beginning" />
-                <MenuChild label="Move to End" />
+                <MenuChild label="Move Up" onClick={() => moveSlideTo("up")} />
+                <MenuChild
+                  label="Move Down"
+                  onClick={() => moveSlideTo("down")}
+                />
+                <MenuChild
+                  label="Move to Beginning"
+                  onClick={() => moveSlideTo("first")}
+                />
+                <MenuChild
+                  label="Move to End"
+                  onClick={() => moveSlideTo("last")}
+                />
               </MenuParent>
               <MenuParent label="Help">
                 <MenuChild label="About" />
@@ -117,8 +117,11 @@ class App extends Component {
             </MenuBar>
           </Header>
         )}
-        <ToolBar isExpanded={isExpanded} onClickToggle={this.toggleExpand}>
-          <Tool icon="add_box" tooltip="New Slide" />
+        <ToolBar
+          isExpanded={isHeaderExpand}
+          onClickToggle={() => expandHeader(!isHeaderExpand)}
+        >
+          <Tool icon="add_box" tooltip="New Slide" onClick={newSlide} />
           <Tool icon="undo" tooltip="Undo" />
           <Tool icon="redo" tooltip="Redo" />
           <Separator orientation="vertical" />
@@ -142,11 +145,7 @@ class App extends Component {
           <Tool icon="format_align_justify" tooltip="Justify" />
         </ToolBar>
         <Workspace>
-          <SlideStrip
-            slides={slides}
-            selected={selectedSlide}
-            onClickSlide={index => this.setState({ selectedSlide: index })}
-          />
+          <SlideStrip />
           <SlideContainer>
             <Slide />
           </SlideContainer>
@@ -156,4 +155,61 @@ class App extends Component {
   }
 }
 
-export default App;
+App.propTypes = {
+  title: PropTypes.string,
+  isHeaderExpand: PropTypes.bool,
+  expandHeader: PropTypes.func,
+  newSlide: PropTypes.func,
+  deleteSlide: PropTypes.func,
+  setTitle: PropTypes.func,
+  moveSlideTo: PropTypes.func
+};
+
+function mapStateToProps(state) {
+  return state;
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    expandHeader: isExpand => dispatch(setHeaderExpand(isExpand)),
+    setTitle: title => dispatch(setPresentationTitle(title)),
+    newSlide: currentIndex => {
+      dispatch(selectSlide(currentIndex + 1));
+      dispatch(createSlide(currentIndex));
+    },
+    deleteSlide: selectedIndex => {
+      dispatch(removeSlide(selectedIndex));
+    },
+    chooseSlide: selectedIndex => {
+      dispatch(selectSlide(selectedIndex));
+    },
+    moveSlideTo: (selectedIndex, position) =>
+      dispatch(moveSlide(selectedIndex, position))
+  };
+}
+
+function mergeProps(stateProps, dispatchProps, ownProps) {
+  const { selectedSlide, slides } = stateProps;
+  const { deleteSlide, chooseSlide, newSlide, moveSlideTo } = dispatchProps;
+
+  return {
+    ...stateProps,
+    ...dispatchProps,
+    newSlide: () => newSlide(selectedSlide),
+    deleteSlide: () => {
+      // Prevent slide deletion if just one slide left
+      if (slides.length === 1) return;
+
+      deleteSlide(selectedSlide);
+
+      // Select previous slide if current selected slide
+      // is not first slide
+      if (selectedSlide > 0) {
+        chooseSlide(selectedSlide - 1);
+      }
+    },
+    moveSlideTo: position => moveSlideTo(selectedSlide, position)
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps, mergeProps)(App);
