@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import toJSON from "enzyme-to-json";
 
-import SlideStrip from "components/SlideStrip";
+import { SlideStrip } from "components/SlideStrip";
 
 let wrapper, onClickSlide;
 
@@ -49,14 +49,12 @@ describe("SlideStrip", () => {
       />
     );
 
-    expect(onClickSlide.mock.calls.length).toEqual(0);
-
     wrapper
       .find("SlideThumbnail")
       .at(selectedIndex)
       .simulate("click");
 
-    expect(onClickSlide.mock.calls.length).toEqual(1);
+    expect(onClickSlide).toBeCalled();
     expect(onClickSlide).toBeCalledWith(selectedIndex);
   });
 });

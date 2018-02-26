@@ -1,7 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { connect } from "react-redux";
 
+import { selectSlide } from "store/actions";
 import SlideThumbnail from "components/SlideThumbnail";
 
 const Container = styled.div`
@@ -29,6 +31,7 @@ const TotalSlides = styled.span`
   font-family: Roboto;
   font-weight: bold;
   color: #888;
+  user-select: none;
 `;
 
 const SlideContainer = styled.div`
@@ -41,7 +44,7 @@ const SlideContainer = styled.div`
   overflow-y: scroll;
 `;
 
-const SlideStrip = ({ slides, onClickSlide, selected }) => (
+export const SlideStrip = ({ slides, onClickSlide, selected }) => (
   <Container>
     <Header>
       <TotalSlides>{slides.length} Slides</TotalSlides>
@@ -70,4 +73,17 @@ SlideStrip.defaultProps = {
   selected: 0
 };
 
-export default SlideStrip;
+function mapStateToProps(state) {
+  return {
+    slides: state.slides,
+    selected: state.selectedSlide
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onClickSlide: slideIndex => dispatch(selectSlide(slideIndex))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(SlideStrip);
