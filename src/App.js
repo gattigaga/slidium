@@ -15,7 +15,6 @@ import SlideStrip from "components/SlideStrip";
 import Slide from "components/Slide";
 
 import {
-  setPresentationTitle,
   setHeaderExpand,
   createSlide,
   removeSlide,
@@ -55,12 +54,10 @@ const SlideContainer = styled.div`
 class App extends Component {
   render() {
     const {
-      title,
       isHeaderExpand,
       expandHeader,
       newSlide,
       deleteSlide,
-      setTitle,
       moveSlideTo
     } = this.props;
     const fontSizes = [12, 14, 16, 18, 20, 22, 24, 30, 36, 48, 60, 72, 96];
@@ -69,7 +66,7 @@ class App extends Component {
       <Container>
         {isHeaderExpand && (
           <Header>
-            <TitleBox value={title} onChange={e => setTitle(e.target.value)} />
+            <TitleBox />
             <MenuBar>
               <MenuParent label="File">
                 <MenuChild label="New" />
@@ -156,12 +153,10 @@ class App extends Component {
 }
 
 App.propTypes = {
-  title: PropTypes.string,
   isHeaderExpand: PropTypes.bool,
   expandHeader: PropTypes.func,
   newSlide: PropTypes.func,
   deleteSlide: PropTypes.func,
-  setTitle: PropTypes.func,
   moveSlideTo: PropTypes.func
 };
 
@@ -172,7 +167,6 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
   return {
     expandHeader: isExpand => dispatch(setHeaderExpand(isExpand)),
-    setTitle: title => dispatch(setPresentationTitle(title)),
     newSlide: currentIndex => {
       dispatch(selectSlide(currentIndex + 1));
       dispatch(createSlide(currentIndex));

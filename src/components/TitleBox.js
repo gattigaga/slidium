@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { connect } from "react-redux";
+
+import { setPresentationTitle } from "store/actions";
 
 const InputTitle = styled.input`
   width: ${props => props.value.length * 9}px;
@@ -18,7 +21,7 @@ const InputTitle = styled.input`
   }
 `;
 
-const TitleBox = ({ value, onChange }) => (
+export const TitleBox = ({ value, onChange }) => (
   <InputTitle
     type="text"
     value={value}
@@ -36,4 +39,16 @@ TitleBox.defaultProps = {
   value: "Untitled"
 };
 
-export default TitleBox;
+function mapStateToProps(state) {
+  return {
+    value: state.title
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    onChange: event => dispatch(setPresentationTitle(event.target.value))
+  };
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(TitleBox);

@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import toJSON from "enzyme-to-json";
 
-import TitleBox from "components/TitleBox";
+import { TitleBox } from "components/TitleBox";
 
 let wrapper, onChange;
 
@@ -23,8 +23,7 @@ describe("TitleBox", () => {
       }
     };
 
-    expect(onChange.mock.calls.length).toEqual(0);
     wrapper.simulate("change", event);
-    expect(onChange.mock.calls.length).toEqual(1);
+    expect(onChange).toBeCalledWith(event);
   });
 });
