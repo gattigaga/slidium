@@ -4,6 +4,7 @@ import {
   CREATE_SLIDE,
   REMOVE_SLIDE,
   MOVE_SLIDE,
+  SELECT_SLIDE,
   SET_HEADER_EXPAND
 } from "store/actionTypes";
 
@@ -125,6 +126,19 @@ export function slides(state = [1], action) {
   }
 }
 
+// Selected slide index
+export function selectedSlide(state = 0, action) {
+  const { type, payload } = action;
+
+  switch (type) {
+    case SELECT_SLIDE:
+      return payload.slideIndex;
+
+    default:
+      return state;
+  }
+}
+
 // Check if header is expand or not
 export function isHeaderExpand(state = true, action) {
   const { type, payload } = action;
@@ -141,6 +155,7 @@ export function isHeaderExpand(state = true, action) {
 const reducers = combineReducers({
   title,
   slides,
+  selectedSlide,
   isHeaderExpand
 });
 

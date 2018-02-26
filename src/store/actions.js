@@ -3,6 +3,7 @@ import {
   CREATE_SLIDE,
   REMOVE_SLIDE,
   MOVE_SLIDE,
+  SELECT_SLIDE,
   SET_HEADER_EXPAND
 } from "store/actionTypes";
 
@@ -68,6 +69,22 @@ export function moveSlide(selectedIndex, position) {
     payload: {
       selectedIndex,
       position
+    }
+  };
+}
+
+/**
+ * Select existing slide
+ *
+ * @export
+ * @param {number} slideIndex - Slide which will be selected
+ * @returns {object}
+ */
+export function selectSlide(slideIndex) {
+  return {
+    type: SELECT_SLIDE,
+    payload: {
+      slideIndex
     }
   };
 }

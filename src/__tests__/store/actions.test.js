@@ -3,6 +3,7 @@ import {
   CREATE_SLIDE,
   REMOVE_SLIDE,
   MOVE_SLIDE,
+  SELECT_SLIDE,
   SET_HEADER_EXPAND
 } from "store/actionTypes";
 import {
@@ -10,6 +11,7 @@ import {
   createSlide,
   removeSlide,
   moveSlide,
+  selectSlide,
   setHeaderExpand
 } from "store/actions";
 
@@ -61,6 +63,18 @@ test("should create an action to move current slide", () => {
   };
 
   expect(moveSlide(selectedIndex, position)).toEqual(expected);
+});
+
+test("should create an action to select slide", () => {
+  const slideIndex = 0;
+  const expected = {
+    type: SELECT_SLIDE,
+    payload: {
+      slideIndex
+    }
+  };
+
+  expect(selectSlide(slideIndex)).toEqual(expected);
 });
 
 test("should create an action to toggle header expand", () => {

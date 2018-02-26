@@ -3,9 +3,10 @@ import {
   createSlide,
   removeSlide,
   moveSlide,
+  selectSlide,
   setHeaderExpand
 } from "store/actions";
-import { title, slides, isHeaderExpand } from "store/reducers";
+import { title, slides, selectedSlide, isHeaderExpand } from "store/reducers";
 
 describe("title", () => {
   it("should return initial state", () => {
@@ -97,6 +98,21 @@ describe("slides", () => {
     const action = moveSlide(1, "last");
 
     expect(slides(initial, action)).toEqual(expected);
+  });
+});
+
+describe("selectedSlide", () => {
+  it("should return initial state", () => {
+    const expected = 0;
+    expect(selectedSlide(expected, {})).toEqual(expected);
+  });
+
+  it("should return selected slide index", () => {
+    const initial = 0;
+    const expected = 1;
+    const action = selectSlide(1);
+
+    expect(selectedSlide(initial, action)).toEqual(expected);
   });
 });
 
