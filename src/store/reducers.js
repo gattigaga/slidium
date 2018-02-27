@@ -46,11 +46,9 @@ export function slides(state = [1], action) {
       return state.filter((slide, index) => index !== payload.selectedIndex);
 
     case MOVE_SLIDE:
-      let result;
-
       switch (payload.position) {
         case "up":
-          result = state.map((slide, index) => {
+          return state.map((slide, index) => {
             // Check if current slide is selected
             const isSelectedSlide = index === payload.selectedIndex;
             // Check if current slide is destination where selected slide will move on
@@ -72,10 +70,9 @@ export function slides(state = [1], action) {
 
             return slide;
           });
-          break;
 
         case "down":
-          result = state.map((slide, index) => {
+          return state.map((slide, index) => {
             // Check if current slide is selected
             const isSelectedSlide = index === payload.selectedIndex;
             // Check if current slide is destination where selected slide will move on
@@ -98,28 +95,22 @@ export function slides(state = [1], action) {
 
             return slide;
           });
-          break;
 
         case "first":
-          result = [
+          return [
             state[payload.selectedIndex],
             ...state.filter((slide, index) => index !== payload.selectedIndex)
           ];
-          break;
 
         case "last":
-          result = [
+          return [
             ...state.filter((slide, index) => index !== payload.selectedIndex),
             state[payload.selectedIndex]
           ];
-          break;
 
         default:
-          result = state;
-          break;
+          return state;
       }
-
-      return result;
 
     default:
       return state;

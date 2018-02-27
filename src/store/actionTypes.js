@@ -7,7 +7,7 @@ export const REMOVE_SLIDE = "REMOVE_SLIDE";
 export const MOVE_SLIDE = "MOVE_SLIDE";
 
 // selectedSlide
-export const SELECT_SLIDE = "MOVE_SLIDE";
+export const SELECT_SLIDE = "SELECT_SLIDE";
 
 // isHeaderExpand
 export const SET_HEADER_EXPAND = "SET_HEADER_EXPAND";
