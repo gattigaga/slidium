@@ -202,7 +202,32 @@ function mergeProps(stateProps, dispatchProps, ownProps) {
         chooseSlide(selectedSlide - 1);
       }
     },
-    moveSlideTo: position => moveSlideTo(selectedSlide, position)
+    moveSlideTo: position => {
+      moveSlideTo(selectedSlide, position);
+
+      switch (position) {
+        case "up":
+          if (selectedSlide === 0) break;
+          chooseSlide(selectedSlide - 1);
+          break;
+
+        case "down":
+          if (selectedSlide === slides.length - 1) break;
+          chooseSlide(selectedSlide + 1);
+          break;
+
+        case "first":
+          chooseSlide(0);
+          break;
+
+        case "last":
+          chooseSlide(slides.length - 1);
+          break;
+
+        default:
+          break;
+      }
+    }
   };
 }
 
